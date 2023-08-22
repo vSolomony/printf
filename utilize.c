@@ -47,12 +47,12 @@ int is_digt(char c)
 	return (0);
 }
 /**
- * conv_size_number - a function that casts a number to a specific size
+ * conv_size_num - a function that casts a number to a specific size
  * @n: a number to be casted.
  * @size: number indicating the type to be casted.
  * Return: casted value of n
  */
-long int conv_size_number(long int n, int size)
+long int conv_size_num(long int n, int size)
 {
 	if (size == S_LONG)
 		return (n);

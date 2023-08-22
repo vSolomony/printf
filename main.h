@@ -35,8 +35,8 @@ struct frmt
 typedef struct frmt frmt_t;
 
 int _printf(const char *format, ...);
-int hdle_prnt(const char *frmt, int *ind,
-va_list list, int precision, int flags, int size, char buffer[], int width);
+int hdl_print(const char *frmt, int *i,
+va_list list, char buffer[], int flags, int width, int precision, int size);
 
 /********** ALLLLL FUNCTIOOOOONS ***********/
 /*fun of char and str*/

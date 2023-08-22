@@ -71,7 +71,7 @@ int wt_number(int is_post, int ind, char buffer[],
 	else if (flags & F_SPACE)
 		extr_xch = ' ';
 
-	return (write_num(ind, buffer, flags, width, precision,
+	return (wt_num(ind, buffer, flags, width, precision,
 		len, paddin, extr_xch));
 }
 /**

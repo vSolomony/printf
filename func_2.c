@@ -46,7 +46,7 @@ int prnt_ptr(va_list types, char buffer[],
 
 	indxx++;
 
-	return (write_pointer(buffer, indxx, len,
+	return (wt_ptr(buffer, indxx, len,
 		width, flags, paddin, extra_cs, paddin_start));
 }
 

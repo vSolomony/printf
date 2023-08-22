@@ -36,7 +36,7 @@ int _printf(const char *format, ...)
 			precision = get_precision(format, &i, all_list);
 			size = get_size(format, &i);
 			++i;
-			printedx = hdle_prnt(format, &i, all_list, buffer,
+			printedx = hdl_print(format, &i, all_list, buffer,
 				flags, width, precision, size);
 			if (printedx == -1)
 				return (-1);
