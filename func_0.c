@@ -16,7 +16,7 @@ int prnt_char(va_list types, char buffer[],
 {
 	char c = va_arg(types, int);
 
-	return (int handle_wt_char(c, buffer, flags, width, precision, size));
+	return (handle_wt_char(c, buffer, flags, width, precision, size));
 }
 /** a function to print a string **/
 /**

@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * hdle_prnt - a function that prints an argument according to its type
  * @frmt: formatted string to print the arguments
@@ -12,21 +11,20 @@
  * @size: size specifier
  * Return: 1 or 2;
  */
-
-int hdle_prnt(const char *frmt, int *ind, va_list list, char buffer[],
-	int flags, int width, int precision, int size)
+int hdle_prnt(const char *frmt, int *ind,
+va_list list, int precision, int flags, int size, char buffer[], int width)
 {
 	int i, length = 0, chars = -1;
 	frmt_t frmt_types[] = {
 		{'c', prnt_char}, {'s', prnt_string}, {'%', prnt_percent},
 		{'i', prnt_int}, {'d', prnt_int}, {'b', prnt_binary},
-		{'u', prnt_unsigned}, {'o', prnt_octal}, {'x', prnt_hexadecimal},
-		{'X', prnt_hexa_upper}, {'p', prnt_pointer}, {'S', prnt_non_prntable},
-		{'r', prnt_reverse}, {'R', prnt_rot13string}, {'\0', NULL}
+		{'u', prnt_unsigned}, {'o', prnt_octa}, {'x', prnt_hexadec},
+		{'X', prnt_hexaup}, {'p', prnt_ptr}, {'S', prnt_non_prntable},
+		{'r', prnt_rev}, {'R', prnt_rot13str}, {'\0', NULL}
 	};
 	for (i = 0; frmt_types[i].frmt != '\0'; i++)
 		if (frmt[*ind] == frmt_types[i].frmt)
-			return (frmt_types[i].fn(list, buffer, flags, width, precision, size));
+			return (frmt_types[i].fun(list, buffer, flags, width, precision, size));
 
 	if (frmt_types[i].frmt == '\0')
 	{

@@ -140,7 +140,7 @@ int prnt_hexa(va_list types, char mp_to[], char buffer[],
 
 	while (numx > 0)
 	{
-		buffer[i--] = map_to[numx % 16];
+		buffer[i--] = mp_to[numx % 16];
 		numx /= 16;
 	}
 

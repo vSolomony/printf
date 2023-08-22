@@ -5,8 +5,6 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int _printf(const char *format, ...);
-
 #define BUFF_SIZE 1024
 #define UNUSED(x) (void)(x)
 
@@ -36,7 +34,8 @@ struct frmt
  */
 typedef struct frmt frmt_t;
 
-int hdle_prnt(const char *frmt, int *i,
+int _printf(const char *format, ...);
+int hdle_prnt(const char *frmt, int *ind,
 va_list list, int precision, int flags, int size, char buffer[], int width);
 
 /********** ALLLLL FUNCTIOOOOONS ***********/
@@ -63,17 +62,21 @@ int prnt_hexaup(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int prnt_hexa(va_list types, char mp_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
+
 /* fun of non prnt char */
 int prnt_non_prntable(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+
 /* fun of mem adds. */
 int prnt_ptr(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+
 /* fun of other spec. */
 int get_size(const char *format, int *i);
 int get_width(const char *format, int *i, va_list list);
 int get_flags(const char *format, int *i);
 int get_precision(const char *format, int *i, va_list list);
+
 /* fun of rev */
 int prnt_rev(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
@@ -92,8 +95,7 @@ int wt_ptr(char buffer[], int ind, int length,
 int wt_number(int is_post, int ind, char buffer[],
 	int flags, int width, int precision, int size);
 int wt_unsgnd(int is_negt, int ind,
-char buffer[],
-	int flags, int width, int precision, int size);
+	char buffer[], int flags, int width, int precision, int size);
 
 /* utilitsss. */
 int is_digt(char);
@@ -101,6 +103,6 @@ int is_prntable(char);
 int app_hexa_code(char, char[], int);
 
 long int conv_size_unsgnd(unsigned long int num, int size);
-long int conv_size_number(long int num, int size);
+long int conv_size_num(long int num, int size);
 
 #endif

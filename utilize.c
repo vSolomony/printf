@@ -1,9 +1,7 @@
 #include "main.h"
-
 /**
  * is_prntable - a function that evaluates if a char is printable
  * @c: char to be evaluated.
- *
  * Return: 1 if c is printable, if else returns 0
  */
 int is_prntable(char c)
@@ -13,7 +11,6 @@ int is_prntable(char c)
 
 	return (0);
 }
-
 /**
  * app_hexa_code - append ascci in hexadecimal code in order to buffer
  * @buffer: an array of chars
@@ -37,11 +34,9 @@ int app_hexa_code(char ascii_code, char buffer[], int i)
 
 	return (3);
 }
-
 /**
  * is_digt - a function that verifies if a char is a digit
  * @c: a character to be evaluated
- *
  * Return: 1 if c is a digit, if else return 0
  */
 int is_digt(char c)
@@ -51,12 +46,10 @@ int is_digt(char c)
 
 	return (0);
 }
-
 /**
  * conv_size_number - a function that casts a number to a specific size
  * @n: a number to be casted.
  * @size: number indicating the type to be casted.
- *
  * Return: casted value of n
  */
 long int conv_size_number(long int n, int size)
@@ -68,12 +61,10 @@ long int conv_size_number(long int n, int size)
 
 	return ((int)n);
 }
-
 /**
  * conv_size_unsgnd - a function that casts a number to a specific size
  * @n: a number to be casted
  * @size: Number indicating the type to be casted
- *
  * Return: casted value of n
  */
 long int conv_size_unsgnd(unsigned long int n, int size)

@@ -8,7 +8,7 @@
  * @width: width
  * @precision: precision
  * @size: Size
- * Return: char that has been printed 
+ * Return: char that has been printed
  */
 int handle_wt_char(char c, char buffer[],
 	int flags, int width, int precision, int size)
@@ -64,7 +64,7 @@ int wt_number(int is_post, int ind, char buffer[],
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		paddin = '0';
-	if (is_negative)
+	if (is_post)
 		extr_xch = '-';
 	else if (flags & F_PLUS)
 		extr_xch = '+';
@@ -148,7 +148,7 @@ int wt_unsgnd(int is_negt, int ind,
 	int len = BUFF_SIZE - ind - 1, i = 0;
 	char paddin = ' ';
 
-	UNUSED(is_negative);
+	UNUSED(is_negt);
 	UNUSED(size);
 
 	if (precision == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0')
